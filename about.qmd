@@ -1,0 +1,19 @@
+---
+title: "About"
+---
+
+## Purpose
+
+TODO: why this site exists and who it is for.
+
+## Who writes it
+
+TODO: your name, background, and affiliations.
+
+## What this site is not
+
+This is a research and education site. It does not provide personal investment advice, and it does not issue Shariah rulings. See the [disclosures](disclosures.qmd).
+
+## Contact
+
+TODO: how readers can reach you.

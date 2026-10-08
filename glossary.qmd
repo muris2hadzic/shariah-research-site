@@ -1,0 +1,45 @@
+---
+title: "Glossary"
+---
+
+Short definitions for readers new to Islamic finance or to investing. TODO: review each entry and expand as articles introduce new terms.
+
+## Islamic finance terms
+
+AAOIFI
+: Accounting and Auditing Organization for Islamic Financial Institutions. A standard-setting body whose Shariah standards are widely used for equity screening.
+
+Riba
+: Interest or usury. Prohibited in Islamic finance.
+
+Gharar
+: Excessive uncertainty or ambiguity in a contract.
+
+Maysir
+: Gambling or speculation that resembles it.
+
+Purification
+: Giving away the portion of investment income that comes from non-permissible sources.
+
+Shariah screening
+: Testing whether a company's business and finances meet a stated Shariah standard.
+
+Sukuk
+: Certificates representing ownership in an underlying asset or project, often described as the Islamic alternative to bonds.
+
+Zakat
+: An obligatory annual charitable payment on qualifying wealth.
+
+## Investing terms
+
+Backtest
+: A simulation of how a strategy would have performed on historical data. It is hypothetical, not a record of real trading.
+
+Drawdown
+: The decline from a portfolio's previous peak to a later low.
+
+Sharpe ratio
+: Return earned above a risk-free rate, per unit of volatility.
+
+Rebalance
+: Adjusting portfolio holdings back to target weights.

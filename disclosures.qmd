@@ -1,0 +1,27 @@
+---
+title: "Disclosures"
+---
+
+::: {.placeholder-note}
+Draft text. Have securities counsel review this page before the site goes public.
+:::
+
+## Educational purpose
+
+Everything on this site is published for research and education. Nothing here is a recommendation to buy or sell any security, and nothing is tailored to any reader's circumstances.
+
+## Hypothetical results
+
+Backtested results are hypothetical. They are produced by applying a set of rules to historical data and do not represent actual trading. They rely on assumptions described on the [methodology](methodology.qmd) page, and real results would differ. Past performance does not indicate future results.
+
+## Not a Shariah ruling
+
+Screening results on this site reflect the application of a published standard by the author. They are not a fatwa. Readers should consult a qualified scholar on questions of personal religious obligation.
+
+## Data
+
+TODO: data providers and any required attributions.
+
+## Conflicts of interest
+
+TODO: whether the author holds positions in securities discussed.

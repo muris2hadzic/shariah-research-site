@@ -1,0 +1,54 @@
+---
+title: "Example strategy: replace me"
+description: "Template strategy page driven by a data file."
+---
+
+```{ojs}
+//| echo: false
+data = FileAttachment("../data/strategies/example-strategy.json").json()
+```
+
+```{ojs}
+//| echo: false
+data.meta.placeholder
+  ? html`<div class="placeholder-note">The numbers on this page are made-up sample data, there only to show the layout. Replace the data file with a real backtest before launch.</div>`
+  : html``
+```
+
+## Rules
+
+TODO: describe the strategy in plain language: universe, signal, weighting, rebalance schedule.
+
+## Backtest summary
+
+```{ojs}
+//| echo: false
+html`<div class="stat-grid">${Object.entries(data.statistics).map(([k, v]) =>
+  html`<div class="stat-tile"><div class="label">${k}</div><div class="value">${v}</div></div>`)}</div>`
+```
+
+```{ojs}
+//| echo: false
+html`<p><small>Backtest period ${data.meta.start} to ${data.meta.end}. Hypothetical results. Source backtest ID: <code>${data.meta.backtest_id}</code>, retrieved ${data.meta.retrieved}.</small></p>`
+```
+
+## Equity curve
+
+```{ojs}
+//| echo: false
+equity = data.equity.map(d => ({date: new Date(d.date), value: d.value}))
+Plot.plot({
+  height: 340,
+  marginLeft: 60,
+  x: {label: null},
+  y: {label: "Portfolio value", grid: true},
+  marks: [
+    Plot.lineY(equity, {x: "date", y: "value", stroke: "#0F6E56", strokeWidth: 1.5, tip: true}),
+    Plot.ruleY([equity[0].value], {stroke: "currentColor", strokeOpacity: 0.3, strokeDasharray: "4 4"})
+  ]
+})
+```
+
+## Assumptions and limitations
+
+TODO: costs, slippage, data caveats specific to this strategy.

@@ -1,0 +1,45 @@
+---
+title: "Methodology"
+---
+
+This page explains how companies are screened and how strategies are tested. Every strategy page links back here.
+
+## Screening standard
+
+Screens follow the AAOIFI Shariah standard for trading in shares.
+
+TODO: cite the exact standard and edition you apply.
+
+### Business activity screen
+
+TODO: list the excluded activities and how each company's activities are classified.
+
+### Financial ratio screens
+
+TODO: fill in the thresholds and denominators you apply.
+
+| Screen | Ratio | Threshold |
+|---|---|---|
+| Interest-bearing debt | TODO | TODO |
+| Interest-bearing assets | TODO | TODO |
+| Non-permissible income | TODO | TODO |
+
+## Purification
+
+TODO: how the non-permissible share of income is calculated, and how it is treated in reported returns.
+
+## Data sources
+
+TODO: where prices and fundamentals come from, and the date range covered.
+
+## Backtesting assumptions
+
+TODO: rebalance frequency, transaction costs, slippage, universe definition, treatment of delisted companies.
+
+## Shariah review
+
+TODO: state plainly whether a scholar or Shariah board has reviewed this methodology. If none has, say so.
+
+## Known limitations
+
+TODO: data gaps, judgment calls, and anything a careful reader should know.

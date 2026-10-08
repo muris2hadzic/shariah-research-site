@@ -1,0 +1,33 @@
+project:
+  type: website
+  output-dir: _site
+  resources:
+    - data/strategies/*.json
+
+website:
+  title: "Halal Investment Research"          # TODO: replace
+  description: "Research on investing through an Islamic finance lens."
+  # site-url: https://yourdomain.com   # TODO: uncomment when the domain is connected
+  navbar:
+    left:
+      - text: Research
+        href: research/index.qmd
+      - text: Strategies
+        href: strategies/index.qmd
+      - text: Methodology
+        href: methodology.qmd
+      - text: Glossary
+        href: glossary.qmd
+      - text: About
+        href: about.qmd
+  page-footer:
+    center: |
+      Educational research only. Not investment advice and not a Shariah ruling (fatwa). [Disclosures](/disclosures.qmd)
+
+format:
+  html:
+    theme:
+      light: [flatly, styles.scss]
+      dark: [darkly, styles.scss]
+    toc: true
+    link-external-newwindow: true

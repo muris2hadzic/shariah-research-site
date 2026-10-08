@@ -1,0 +1,25 @@
+---
+title: "SITE NAME"
+toc: false
+listing:
+  id: latest
+  contents:
+    - "research/*.qmd"
+    - "!research/index.qmd"
+  sort: "date desc"
+  type: default
+  max-items: 5
+  fields: [date, title, description]
+---
+
+TODO: two or three sentences on what this site is. Suggested starting point:
+
+This site publishes research on equity investing from a Shariah-compliant perspective. It is written for readers who are new to investing and want to understand how Islamic finance principles shape what can be owned, and what that means for a portfolio.
+
+- **New here?** Start with the [glossary](glossary.qmd) and the [methodology](methodology.qmd).
+- **Looking for results?** See the [strategies](strategies/index.qmd), each with its full backtest and assumptions.
+
+## Latest research
+
+::: {#latest}
+:::

@@ -1,0 +1,30 @@
+---
+title: "Example article: replace me"
+description: "A template showing how a research article is laid out."
+date: 2026-10-07
+categories: [template]
+---
+
+::: {.placeholder-note}
+This is a template. Copy this file, rename it `YYYY-MM-DD-short-title.qmd`, and replace the contents. Delete this one before launch.
+:::
+
+## The question
+
+One paragraph: what are you asking, and why would a reader care?
+
+## What was tested
+
+Describe the data and method in plain language. Link to the [methodology](../methodology.qmd) for the screening rules.
+
+## What was found
+
+Tables and charts exported from your QuantConnect notebooks go here. Save images in an `images/` folder next to this file:
+
+```markdown
+![Caption describing the chart](images/my-chart.png)
+```
+
+## What it means, and what it doesn't
+
+State the limits of the result.

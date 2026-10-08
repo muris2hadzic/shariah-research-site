@@ -1,0 +1,11 @@
+---
+title: "Strategies"
+toc: false
+listing:
+  contents: "*.qmd"
+  sort: "title"
+  type: table
+  fields: [title, description]
+---
+
+Each strategy page shows its rules, its backtest, and the assumptions behind it. All results are hypothetical unless a page says otherwise. See the [methodology](../methodology.qmd).
