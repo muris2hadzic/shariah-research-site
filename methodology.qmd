@@ -1,45 +1,186 @@
 ---
 title: "Methodology"
+subtitle: "How companies are screened, graded and studied on this site"
 ---
 
-This page explains how companies are screened and how strategies are tested. Every strategy page links back here.
+Every company, strategy and result on this site follows the method set out below. It applies the AAOIFI Shariah standard in two stages: a quantitative screen on standardised financial data, then a second check against each company's own annual filing with the U.S. Securities and Exchange Commission (SEC). The same method is used in our published research, listed at the end of this page.
 
-## Screening standard
+The first part of the page explains the method in plain language. The [technical details](#technical-details) section gives the exact definitions for readers who want them.
 
-Screens follow the AAOIFI Shariah standard for trading in shares.
+## The method in brief
 
-TODO: cite the exact standard and edition you apply.
+### 1. Which companies are considered
 
-### Business activity screen
+Each month we take the 500 most actively traded U.S.-listed stocks, ranked by dollar trading volume. This is a close stand-in for the large companies that make up the S&P 500, built without relying on a licensed index membership list.
 
-TODO: list the excluded activities and how each company's activities are classified.
+### 2. What the company does
 
-### Financial ratio screens
+A company is excluded if its main line of business is one the AAOIFI standard prohibits:
 
-TODO: fill in the thresholds and denominators you apply.
+- banks and mortgage finance
+- asset management, capital markets and exchanges
+- insurance
+- credit services
+- mortgage real estate investment trusts
+- alcoholic beverages
+- tobacco
+- gambling and casinos
+- cannabis producers
 
-| Screen | Ratio | Threshold |
+We also exclude **aerospace and defence, advertising agencies, broadcasting and entertainment**. Many Shariah boards exclude these, but the AAOIFI standard does not name them, so this second group is a matter of interpretation. Our research reports the main results both with and without it.
+
+### 3. How the company is financed
+
+Companies that pass the business screen must also pass three financial tests:
+
+| Test | What it measures | Limit |
 |---|---|---|
-| Interest-bearing debt | TODO | TODO |
-| Interest-bearing assets | TODO | TODO |
-| Non-permissible income | TODO | TODO |
+| Debt | Interest-bearing borrowing, including lease obligations | No more than 30% of average market value |
+| Interest-bearing assets | Cash and interest-bearing securities held | No more than 30% of average market value |
+| Non-permissible income | Interest and other income from prohibited sources | Below 5% of revenue |
+
+"Average market value" is the company's stock market value averaged over the previous 36 months. Averaging keeps a short-lived price swing from moving a company in or out of compliance.
+
+In practice the debt test does most of the work. In a typical year it removes about a third of all companies, roughly twice as many as the business screen and far more than the other two financial tests combined. Among large U.S. companies, Shariah compliance is decided mainly by the balance sheet.
+
+### 4. A second check against the company's own filing
+
+For companies that pass the first three steps, the financial tests are recalculated from the company's own annual report (form 10-K or 20-F), using the machine-readable data filed with the SEC. This stage counts lease liabilities in full and adds one more test: revenue from prohibited business segments must be below 5% of the total.
+
+Some filings cannot be fully checked because the required data items are missing. Those companies are kept and flagged rather than excluded, and results are also reported without them.
+
+### 5. A grade for how much room a company has
+
+Every company that passes both stages receives a grade based on how close it sits to the nearest limit:
+
+| Grade | Meaning |
+|---|---|
+| A | Uses less than a third of the allowed room on every test |
+| B | Uses between a third and two thirds |
+| C | Uses more than two thirds, so a modest change could make it fail |
+
+A grade describes how much a company could deteriorate before failing, not how good an investment it is. In practice, grades are mostly driven by debt: the typical A-rated company has debt of about 3% of its market value, against about 22% for a C-rated company.
+
+### 6. Timing
+
+Companies are reclassified once a year. A company's status for a given year is set from the last month in that year in which it was in the universe, using only information available at that date. The company is then held, or not held, on that basis for the whole of the following year.
+
+This matters because compliance changes. Of about 2,180 companies studied, 457 were compliant in some years and non-compliant in others. Assigning today's status to past years would hide those changes and overstate how well a screen could have been followed in real time.
+
+## What a typical year looks like
+
+Averages over 2011-2024:
+
+| Step | Companies remaining |
+|---|---|
+| Universe, including companies that were among the 500 for part of the year | 815 |
+| After the business-line screen | 684 |
+| After all three financial tests | 384 |
+| After the second check against SEC filings | 351 |
+| of which the filing could be fully checked | 203 |
+
+About 47% of the universe passes the quantitative screen and about 43% passes both stages.
+
+## What this method is not
+
+- **It is not a replica of a commercial Shariah index.** We could not compare it with the historical constituent lists of commercial indices, which are licensed. It should be read as a transparent implementation of the AAOIFI standard.
+- **It is not a Shariah ruling.** Applying a published standard to company data is a research exercise. Questions of personal religious obligation belong with a qualified scholar.
+- **It is not investment advice.** See the [disclosures](disclosures.qmd).
+
+::: {.callout-note}
+## Shariah review
+TODO: state whether a scholar or Shariah board has reviewed this methodology. If none has, say so plainly here.
+:::
 
 ## Purification
 
-TODO: how the non-permissible share of income is calculated, and how it is treated in reported returns.
+Even a compliant company may earn a small share of its income from non-permissible sources, below the 5% limit. Many investors give away that share of their returns as charity. This is called purification.
 
-## Data sources
+::: {.callout-note}
+## To complete
+TODO: say how purification is treated in the returns shown on this site, for example whether reported returns are before or after purification, and how an investor could estimate the amount from the non-permissible income ratio.
+:::
 
-TODO: where prices and fundamentals come from, and the date range covered.
+## Technical details
 
-## Backtesting assumptions
+### Data
 
-TODO: rebalance frequency, transaction costs, slippage, universe definition, treatment of delisted companies.
+- **Prices and fundamentals:** point-in-time Morningstar data accessed through QuantConnect. Point-in-time means each figure is used only from the date it became available.
+- **Company filings:** XBRL data from each company's 10-K or 20-F filing with the SEC.
+- **Business lines:** Morningstar industry codes recorded at each screening date. We do not exclude companies by Standard Industrial Classification (SIC) code, because those categories are too coarse. For example, SIC 2080 covers all beverages and SIC 6798 all real estate investment trusts.
 
-## Shariah review
+### Universe membership
 
-TODO: state plainly whether a scholar or Shariah board has reviewed this methodology. If none has, say so.
+The annual universe includes companies that were among the 500 most traded for only part of the year. Of the 815 companies in a typical year, about 465 are members in December and about 350 left the universe earlier. Those that left are smaller (median average market value of $5.3 billion, against $19.5 billion), which matters for how portfolios are weighted (see below).
+
+### Stage 1 ratio definitions
+
+All market-value denominators are 36-month trailing averages.
+
+- **Non-permissible income:** the sum of interest income, investment income, realised gains, derivative gains, finance-lease income and income from non-permissible affiliates, as a share of revenue. Must be below 5%.
+- **Debt:** interest-bearing debt, including capitalised lease obligations. Must not exceed 30% of average market value. Total debt is taken as the larger of the vendor's total-debt field and the sum of its long-term, short-term and capitalised-lease components, because the vendor total omits lease liabilities for some companies after the adoption of the ASC 842 lease standard.
+- **Interest-bearing assets:** cash and interest-bearing securities. Must not exceed 30% of average market value.
+
+### Operating leases before 2019
+
+Before fiscal 2019, U.S. companies did not record operating leases on the balance sheet. Their filings disclosed only the schedule of future lease payments, without discounting. We convert that schedule to a present value with a factor of 0.80 and add it to debt.
+
+The factor is calibrated from companies that reported both the 2018 schedule and the 2019 balance-sheet liability (a median ratio of 0.91 across 213 companies), and from the range of 0.65 to 0.90 implied by typical lease terms and discount rates. We test a range of 0.70 to 0.90. Where a filing tags only the payment due in year five, we apply a multiple of 11 (range 7 to 14), calibrated the same way.
+
+The adjustment moves 287 company-years from compliant to non-compliant. Another 52 company-years pass at 0.80 but would fail at 0.90. They are flagged, and treating them as non-compliant changes no reported result.
+
+### Stage 2 filing tests
+
+A company that passes Stage 1 is excluded if, measured from its own filing:
+
+1. interest-bearing debt plus lease liabilities exceeds 30% of average market value
+2. non-permissible income is 5% of revenue or more
+3. revenue from prohibited business segments is 5% of total revenue or more
+
+Both stages use the same 30% debt limit. The filing stage differs in counting lease liabilities in full and in measuring each item from the company's own disclosure rather than from standardised vendor fields. It removes about 33 companies a year, split between debt and non-permissible income, and almost none on business segments.
+
+### Compliance grades
+
+For each company that passes both stages we compute a headroom ratio $u$: the largest of its four ratios, each divided by its limit.
+
+$$
+u = \max\left(\frac{\text{Debt}}{0.30},\ \frac{\text{Debt + leases}}{0.30},\ \frac{\text{Interest-bearing assets}}{0.30},\ \frac{\text{Non-permissible income}}{0.05}\right)
+$$
+
+Debt and interest-bearing assets come from Stage 1. Debt plus leases comes from the filing. Non-permissible income comes from the filing where it can be measured and from Stage 1 otherwise. A compliant company has $u \le 1$.
+
+Grade A means $u < 1/3$, grade B means $1/3 \le u < 2/3$, and grade C means $u \ge 2/3$. The grades split the compliant universe roughly into thirds. The binding limit is one of the two debt ratios for 60% of graded company-years, interest-bearing assets for 28%, and non-permissible income for 12%.
+
+### Two definitions of "compliant"
+
+- **Compliant universe:** companies that pass Stage 1. This is our main definition, and it corresponds to the quantitative screens used by commercial Shariah indices.
+- **Strict universe:** companies that pass both stages.
+
+Each research page states which definition it uses.
+
+### How results are measured
+
+- **Rebalancing:** portfolios are rebalanced once a year, on the classification described above.
+- **Weighting:** results are reported both equal-weighted and value-weighted, because the choice can change conclusions. Value weights use December market values.
+- **Missing returns:** a company without a return in a given month (delisted, suspended or missing) drops out for that month, and the other weights are rescaled. No separate delisting return is added.
+- **Risk adjustment:** performance is measured as alpha, the return left over after accounting for exposure to six common return factors: the five Fama-French factors (market, size, value, profitability and investment) plus momentum. Alpha is reported annualised.
+- **Statistical tests:** standard errors are Newey-West. Differences between two portfolios are tested directly on the monthly difference in their returns.
+- **Sub-periods:** results are also reported separately for 2011-2021 and 2022-2024, split at the start of the 2022 interest-rate tightening cycle.
+- **Random benchmarks:** to separate the effect of a screen from the effect of simply holding fewer companies, screened portfolios are compared with many randomly drawn portfolios of the same size.
+
+All results are hypothetical. They come from applying rules to historical data, not from actual trading, and they do not include transaction costs.
 
 ## Known limitations
 
-TODO: data gaps, judgment calls, and anything a careful reader should know.
+- **Associational evidence.** The results describe how compliant and non-compliant companies performed. They do not show that compliance caused the difference. Because the debt test divides by market value, a company whose share price falls moves toward non-compliance as it delivers poor returns, which makes cause and effect hard to separate.
+- **Limited statistical power.** Confidence intervals are wide, and the 2022-2024 window has only 36 months. A cost that is "not detectable" is not the same as a cost of zero.
+- **U.S. companies only, and no financial crisis.** The sample covers 2011-2024, which contains no systemic financial crisis. It cannot show whether the debt limit protects investors in one.
+- **Incomplete filing checks.** The second stage could not be completed for every company. Results that depend on it are reported with and without the companies that could not be fully checked.
+- **One standard.** The method implements AAOIFI. Other standards, such as those using total assets rather than market value as the denominator, would classify some companies differently.
+
+## Research using this method
+
+- Hadzic, M., and Hassan, M.K. (2026). Construction More Than Conscience: What Drives the Measured Cost of Screened Portfolios? Evidence from Shariah-Compliant U.S. Equities. Working paper, Lake Forest College and University of New Orleans.
+- Hadzic, M., and Hassan, M.K. (2026). A Novel Cash Waqf Model: Leveraging US Non-Profit and Endowment Frameworks. Working paper, Lake Forest College and University of New Orleans.
+
+TODO: add links to the papers once they are public.
