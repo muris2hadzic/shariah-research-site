@@ -1,5 +1,5 @@
 ---
-title: "SITE NAME"
+title: "HALAL INVESTMENT RESEARCH"
 toc: false
 listing:
   id: latest
