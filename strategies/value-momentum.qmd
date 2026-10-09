@@ -1,0 +1,73 @@
+---
+title: "Value and momentum"
+description: "A value and momentum strategy within the Shariah-compliant universe."
+---
+
+```{ojs}
+//| echo: false
+data = FileAttachment("../data/strategies/Value_Momentum.json").json()
+```
+
+```{ojs}
+//| echo: false
+data.meta.placeholder
+  ? html`<div class="placeholder-note">The numbers on this page are made-up sample data, there only to show the layout.</div>`
+  : html``
+```
+
+All results on this page are hypothetical. They come from a backtest that applied fixed rules to historical data, not from actual trading. See the [methodology](../methodology.qmd) and [disclosures](../disclosures.qmd).
+
+## Rules
+
+TODO: describe the strategy in plain language:
+
+- **Universe:** which compliant universe (passes Stage 1, or passes both stages)
+- **Value signal:** how value is measured
+- **Momentum signal:** how momentum is measured, and how the two are combined
+- **Holdings and weighting:** how many stocks, and how they are weighted
+- **Rebalancing:** how often, and when compliance status is updated
+
+## Backtest summary
+
+```{ojs}
+//| echo: false
+labels = ({
+  "Compounding Annual Return": "Annual return (compounded)",
+  "Sharpe Ratio": "Sharpe ratio",
+  "Drawdown": "Maximum drawdown",
+  "Total Orders": "Total orders"
+})
+fmt = v => v.endsWith("%") ? parseFloat(v).toFixed(1) + "%" : (v.includes(".") ? parseFloat(v).toFixed(2) : v)
+html`<div class="stat-grid">${Object.entries(data.statistics).map(([k, v]) =>
+  html`<div class="stat-tile"><div class="label">${labels[k] ?? k}</div><div class="value">${fmt(v)}</div></div>`)}</div>`
+```
+
+```{ojs}
+//| echo: false
+html`<p><small>Backtest period ${data.meta.start} to ${data.meta.end}, starting value $${data.equity[0].value.toLocaleString("en-US")}. Run on QuantConnect, backtest ID <code>${data.meta.backtest_id}</code>, retrieved ${data.meta.retrieved}.</small></p>`
+```
+
+## Equity curve
+
+```{ojs}
+//| echo: false
+equity = data.equity.map(d => ({date: new Date(d.date), value: d.value}))
+Plot.plot({
+  height: 340,
+  marginLeft: 70,
+  x: {label: null},
+  y: {label: "Portfolio value ($)", grid: true, tickFormat: "~s"},
+  marks: [
+    Plot.ruleY([equity[0].value], {stroke: "currentColor", strokeOpacity: 0.3, strokeDasharray: "4 4"}),
+    Plot.lineY(equity, {x: "date", y: "value", stroke: "#0F6E56", strokeWidth: 1.5, tip: true})
+  ]
+})
+```
+
+The dashed line marks the starting value.
+
+## Assumptions and limitations
+
+- **Transaction costs:** TODO: state whether the backtest includes commissions and slippage, and which fee model.
+- **Short window:** the backtest covers six years, which contain no recession and no sustained bear market. Results over a single period of that length say little about how the strategy would behave in other conditions.
+- **Hypothetical results:** a backtest shows how fixed rules would have performed on past data. Past performance does not indicate future results.
